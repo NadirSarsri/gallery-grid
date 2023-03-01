@@ -1,0 +1,60 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-title {
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 2.2rem;
+}
+.main-title::after {
+    content: "";
+    margin: 1rem auto;
+    display: block;
+    width: 3px;
+    height: 4rem;
+    background-color: #333;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: fit-content;
+    gap: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.box {
+    border-radius: 0.7rem;
+    overflow: hidden;
+}
+
+.box > img {
+    width: 100%;
+    object-fit: cover;
+}
+
+@media screen and (min-width: 768px){
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+        .main-title {
+            font-weight: 500;
+            line-height: 1.4;
+            font-size: 3rem;
+        }
+}
+@media screen and (min-width: 1024px){
+    .grid {
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .big-box {
+        grid-column: 2 / span 2;
+        grid-row: 1 / span 2;
+    }
+}
