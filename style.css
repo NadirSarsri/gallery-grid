@@ -22,18 +22,18 @@ body {
 .grid {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: fit-content;
+    grid-template-rows: auto;
     gap: 1rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
 }
 
 .box {
-    border-radius: 0.7rem;
     overflow: hidden;
 }
 
 .box > img {
+    border-radius: 0.7rem;
     width: 100%;
     object-fit: cover;
 }
